@@ -1,0 +1,156 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+:root {
+  font-size: 62.5%;
+  --hue: 250;
+    
+  --ff-title: 'Staatliches', sans-serif;
+  --ff-texting: 'Palanquin', sans-serif;
+
+  --bg-primary: hsla(218, 17%, 62%, 1);
+  --bg-secondary: hsla(233, 100%, 97%, 1);
+  --bg-terceary: hsla(275, 18%, 79%, 1);
+  --bg-quartary: hsla(312, 91%, 96%, 1);
+
+  --fc-primary: hsla(0, 0%, 100%, 1);
+  --fc-secundary: hsla(274, 84%, 12%, 1);
+  --fc-terceary: hsla(232, 17%, 35%, 1);
+
+  --fs-body: 1.5rem;
+  --fs-title: clamp(3rem, 1rem + 5vw, 4rem);
+  --fs-title-sm: clamp(1rem, 0.5rem + 4vw, 2rem);
+}
+
+body::before {
+  content: "";
+  background: var(--bg-primary);
+  width: 100%;
+  height: 29rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+body {
+  font-family: var(--ff-title);
+
+  background: var(--bg-secondary);
+}
+
+.page {
+  max-width: 33rem;
+  margin: 0 auto;
+}
+
+main img {
+  width: 100%;
+  height: auto;
+}
+
+header {
+  margin: 3.2rem 0 6.3rem;
+  text-align: center;
+}
+
+h1 {
+  font-size: var(--fs-title);
+  font-weight: 400;
+  line-height: 3.4rem;
+  letter-spacing: 0.05em;
+  height: 4.9rem;
+  text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: var(--fc-primary);
+  background: var(--bg-terceary);
+  margin-top: 2.7rem;
+}
+
+p {
+  color: var(--fc-secundary);
+  font-family: var(--ff-texting);
+  font-weight: 400;
+  font-size: 2.0rem;
+  line-height: var(--fs-title-sm);
+
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+
+main {
+  display: grid;
+  gap: 3.6rem;
+
+  padding: 3.2rem;
+}
+
+.card {
+  position: relative;
+}
+
+.card img {
+  height: 41.6rem;
+  object-fit: cover;
+  filter: brightness(0.8);
+  opacity: 0.8;
+
+  border-radius: 2rem;
+
+  animation: downtop 700ms 300ms backwards;
+}
+
+.card img:hover {
+  transform: scale(1.1);
+  opacity: 1;
+}
+
+.card h2 {
+  position: absolute;
+  top: 1.6rem;
+  right: 1.6rem;
+
+  border-radius: 2rem;
+  background-color: var(--bg-quartary);
+  font-size: var(--fs-title-sm);
+  font-weight: 400;
+  color: var(--fc-terceary);
+  padding: 0 2.3rem;
+
+  width: fit-content;
+  height: 3.8rem;
+
+  display: inline-flex;
+  align-items: center;
+}
+
+@keyframes topdown {
+  0% {
+      opacity: 0;
+      transform: translatey(-15px);
+  }
+
+  100% {
+      opacity: 1;
+      transform: translatey(0);
+  }
+}
+
+@keyframes downtop {
+  0% {
+      opacity: 0;
+      transform: translatey(+15px);
+  }
+
+  100% {
+      opacity: 0.8;
+      transform: translatey(0);
+  }
+}
